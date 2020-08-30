@@ -116,7 +116,7 @@ class VideoRecorder: NSObject, AVCaptureAudioDataOutputSampleBufferDelegate {
         } catch let error {
             NSLog("Unable to delete file, with error: \(error)")
         }
-        DispatchQueue.main.async { [weak self] () -> Void in
+        DispatchQueue.main.async { () -> Void in
             completionHandler(targetURL)
         }
     }
