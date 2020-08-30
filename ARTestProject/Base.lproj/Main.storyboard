@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17124"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ARTestProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgB-nh-GY3">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n60-TI-crN" customClass="ARSCNView">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="766"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0o-ag-GDe" userLabel="BOTTOM_TOOLBAR">
+                                        <rect key="frame" x="0.0" y="766" width="414" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldr-pf-vp7">
+                                                <rect key="frame" x="190" y="0.0" width="34" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="AQN-pl-LWn"/>
+                                                </constraints>
+                                                <state key="normal" title="Start"/>
+                                                <connections>
+                                                    <action selector="startStopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FAj-i4-BDD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <constraints>
+                                            <constraint firstItem="ldr-pf-vp7" firstAttribute="centerX" secondItem="a0o-ag-GDe" secondAttribute="centerX" id="DCg-Rx-YNn"/>
+                                            <constraint firstAttribute="height" constant="44" id="GHQ-Vb-j4B"/>
+                                            <constraint firstItem="ldr-pf-vp7" firstAttribute="centerY" secondItem="a0o-ag-GDe" secondAttribute="centerY" id="z1X-fv-G4X"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="a0o-ag-GDe" firstAttribute="top" secondItem="n60-TI-crN" secondAttribute="bottom" id="5nO-0K-7bc"/>
+                                    <constraint firstAttribute="trailing" secondItem="a0o-ag-GDe" secondAttribute="trailing" id="Iyv-t2-Cve"/>
+                                    <constraint firstItem="n60-TI-crN" firstAttribute="top" secondItem="cgB-nh-GY3" secondAttribute="top" id="TEg-vC-RDl"/>
+                                    <constraint firstItem="n60-TI-crN" firstAttribute="leading" secondItem="cgB-nh-GY3" secondAttribute="leading" id="UQY-GB-tH7"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="a0o-ag-GDe" secondAttribute="bottom" id="bO3-RO-f2F"/>
+                                    <constraint firstItem="a0o-ag-GDe" firstAttribute="leading" secondItem="cgB-nh-GY3" secondAttribute="leading" id="dQm-z6-9wF"/>
+                                    <constraint firstAttribute="trailing" secondItem="n60-TI-crN" secondAttribute="trailing" id="e0N-Xx-GFf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="cgB-nh-GY3" secondAttribute="bottom" id="ICM-yw-efD"/>
+                            <constraint firstAttribute="trailing" secondItem="cgB-nh-GY3" secondAttribute="trailing" id="OEg-dQ-6gf"/>
+                            <constraint firstItem="cgB-nh-GY3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="duZ-7F-xFB"/>
+                            <constraint firstItem="cgB-nh-GY3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ygG-aD-14V"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="n60-TI-crN" id="wMC-Jm-XJv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-135" y="94"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
